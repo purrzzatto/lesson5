@@ -35,7 +35,7 @@ jobs:
           echo "runs in case of failure"
           echo ${{ env.FORMAT_VAR }}
       - name: function and always status check
-        if:  ${{ startsWish(env.aString, 'this') && always() }}
+        if:  ${{ startsWith(env.aString, 'this') && always() }}
         run: sleep 60
       - name: test cancel status check
         if: ${{ cancelled() }}
