@@ -23,14 +23,14 @@ jobs:
         if: ${{ fromJSON(env.aBool) }}
         run: echo "this variable is a bool"
       - name: contains function
-        if: $${{ contains(env.aString, 'this') }}
+        if: ${{ contains(env.aString, 'this') }}
         run: |
           echo "the string contains this"
           echos "failing here"
       - name: test status
         if: ${{ failure() }}
         env:
-          FORMAT_VAR: $ {{ format('Github {0} {1} {2}', 'actions', 'is', 'awesome') }}
+          FORMAT_VAR: ${{ format('Github {0} {1} {2}', 'actions', 'is', 'awesome') }}
         run: |
           echo "runs in case of failure"
           echo ${{ env.FORMAT_VAR }}
