@@ -18,5 +18,5 @@ jobs:
             python-version: 3.13
     runs-on: ${{ matrix.runner }}
     steps:
-      - run: echo "this job will run in python version ${{ matrix.python-version }}
+      - run: echo "this job will run in python version ${{ matrix.python-version }}"
       
