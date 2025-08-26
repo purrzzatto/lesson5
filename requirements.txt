@@ -1,4 +1,4 @@
 grpcio==1.74.0
 lalsuite==7.26.1
-torch==2.1.0
-ray==2.9.0
+torch==2.8.0
+ray==2.48.0
