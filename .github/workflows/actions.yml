@@ -1,0 +1,27 @@
+name: actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-actions:
+    name: test-action
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run: ls
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+      - name: ls
+        run: ls
+      - name: hello-world-action
+        id: hello-world-action
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "Andre"
+      - name: time
+        run: echo "'greeting time:' ${{ steps.hello-world-action.outputs.time }}"
+      - name: docker action
+        uses: docker://hello-world:latest
+        
+        
